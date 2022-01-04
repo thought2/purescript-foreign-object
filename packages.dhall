@@ -1,16 +1,4 @@
 let upstream =
-      https://raw.githubusercontent.com/purenix-org/temp-package-set/main/packages.dhall sha256:c073e77508fdfeaba77c854190335a1214cb67b57db1b641b14b54427e83ed0c
+      https://raw.githubusercontent.com/thought2/temp-package-set/new-packages/packages.dhall sha256:c0cc1935d07d58229847494a63316339fa77e71b464153db4e332f862bbcdba0
 
-let additions =
-  { miraculix =
-      { dependencies =
-          [ "prelude"
-          , "newtype"
-          , "orders"
-          ]
-      , repo = "https://github.com/thought2/purescript-miraculix.git"
-      , version = "lite"
-      }
-  }
-
-in  upstream // additions
+in  upstream

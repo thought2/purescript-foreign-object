@@ -2,7 +2,7 @@ clean:
 	rm -rf .spago output
 
 build:
-	spago build
+	spago build --config lib.dhall
 
 tests:
 	spago build --config tests.dhall && \
