@@ -39,8 +39,8 @@ module Foreign.Object
   , thawST
   , freezeST
   , runST
-  , toArrayWithKey
   -}
+  , toArrayWithKey
   ) where
 
 {-
@@ -242,9 +242,10 @@ fromFoldableWith f l =
 -- | fields are of the same type.
 fromHomogeneous :: forall r a. Homogeneous r a => { | r } -> Object a
 fromHomogeneous = unsafeCoerce
-
+-}
 foreign import toArrayWithKey :: forall a b. (String -> a -> b) -> Object a -> Array b
 
+{-
 -- | Unfolds a map into a list of key/value pairs
 toUnfoldable :: forall f a. Unfoldable f => Object a -> f (Tuple String a)
 toUnfoldable = A.toUnfoldable <<< toArrayWithKey Tuple
